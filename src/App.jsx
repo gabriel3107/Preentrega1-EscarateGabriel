@@ -1,15 +1,13 @@
 import './App.css'
-import Cart from './components/cart'
 import Header from './components/header'
-
+import { ItemListContainer } from './components/itemListContainer'
 
 function App() {
-  
 
   return (
     <>
       <Header logo="Espri"/>
-      <Cart/>
+      <ItemListContainer/>
     </>
   )
 }
