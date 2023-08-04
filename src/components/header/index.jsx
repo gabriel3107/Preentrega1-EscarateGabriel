@@ -1,22 +1,32 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unescaped-entities */
+import { useContext } from "react";
 import './style.css';
-import Cart from "../cart";
+import { CartContext } from "../../context/cart-context";
+import { useNavigate, Link } from "react-router-dom";
 
 const Header = ({ logo }) => {
+    const { cart } = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const goToCart = () => {
+        navigate('/cart');
+    }
     return (
         <header className="header">
-            <a href="/" className="logo">{logo}</a>
+            <Link to='/' className="logo">{logo}</Link>
             <input type="checkbox" className="side-menu" id="side-menu" />
             <label className="hamb" htmlFor ="side-menu">
                 <span className="hamb-line"></span>
             </label>
             <nav className="nav">
                 <ul className="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Contactos</a></li>
-                    <li><a href="#"><Cart/></a></li>
+                    <li onClick={goToCart} className="menu-cart-container">
+                        <img className="menu-cart-image" src="https://cdn-icons-png.flaticon.com/512/665/665199.png" alt="cart" />
+                        <div className="menu-cart-count-container">
+                            <span className="menu-cart-count">{cart.length}</span>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </header>

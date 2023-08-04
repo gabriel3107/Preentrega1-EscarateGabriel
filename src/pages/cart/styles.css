@@ -1,0 +1,9 @@
+
+.cartContainer {
+    display: flex;
+    margin: 1rem 1.6rem;
+    gap: 1rem;
+    max-width: 600px;
+    flex: 1;
+    height: 100vh;
+}
