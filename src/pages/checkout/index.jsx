@@ -83,7 +83,7 @@ function Checkout() {
                 id: 1,
                 name: 'Pedrito',
                 phone: '123456789',
-                email: 'pedrito@taskmanager.com'
+                email: 'pedrito@gmail.com'
             },
             shipping: {
                 deliverDate: new Date() + 7,
